@@ -1,0 +1,25 @@
+{% extends 'base/layout.html' %} {% load static %} {% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <p class = "h2 text-uppercase mb- text-center text-info">Login</p>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class = "form-control" name = "username" placeholder = "Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class = "form-control" name = "password" placeholder = "Password">
+                </div>
+                <input type="submit" name = "login" class = "btn btn-info btn-block" value = "Login">
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
